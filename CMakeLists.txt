@@ -604,17 +604,17 @@ endif()
 # PIC
 
 # zto_pic
-add_library(zto_pic ${ztcoreSrcGlob})
+add_library(zto_pic STATIC ${ztcoreSrcGlob})
 set_target_properties(zto_pic PROPERTIES COMPILE_FLAGS "${ZT_FLAGS}"
     POSITION_INDEPENDENT_CODE ON)
 
 # libnatpmp_pic
-add_library(natpmp_pic ${libnatpmpSrcGlob})
+add_library(natpmp_pic STATIC ${libnatpmpSrcGlob})
 set_target_properties(natpmp_pic PROPERTIES COMPILE_FLAGS "-DNATPMP_EXPORTS"
     POSITION_INDEPENDENT_CODE ON)
 
 # miniupnpc_pic
-add_library(miniupnpc_pic ${libminiupnpcSrcGlob})
+add_library(miniupnpc_pic STATIC ${libminiupnpcSrcGlob})
 target_compile_definitions(
     miniupnpc_pic
     PRIVATE MACOSX
@@ -632,12 +632,12 @@ target_compile_definitions(
 set_target_properties(miniupnpc_pic PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 # lwip_pic
-add_library(lwip_pic ${lwipSrcGlob})
+add_library(lwip_pic STATIC ${lwipSrcGlob})
 set_target_properties(lwip_pic PROPERTIES POSITION_INDEPENDENT_CODE ON)
 set_target_properties(lwip_pic PROPERTIES COMPILE_FLAGS "${LWIP_FLAGS}")
 
 # libzt_pic
-add_library(zt_pic ${libztSrcGlob})
+add_library(zt_pic STATIC ${libztSrcGlob})
 set_target_properties(zt_pic PROPERTIES COMPILE_FLAGS "${ZT_FLAGS}"
     POSITION_INDEPENDENT_CODE ON)
 
